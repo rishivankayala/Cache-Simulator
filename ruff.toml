@@ -1,0 +1,4 @@
+line-length = 100
+target-version = "py38"
+extend-select = ["E","F","I"]
+ignore = ["E501"]  # allow long lines in README snippets and CSV headers
