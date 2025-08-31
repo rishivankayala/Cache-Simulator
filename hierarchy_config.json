@@ -1,0 +1,30 @@
+{
+  "levels": [
+    {
+      "name": "L1",
+      "size_kb": 32,
+      "assoc": 8,
+      "block_size": 64,
+      "latency_ns": 4,
+      "policy": "LRU"
+    },
+    {
+      "name": "L2",
+      "size_kb": 256,
+      "assoc": 8,
+      "block_size": 64,
+      "latency_ns": 12,
+      "policy": "LRU"
+    }
+  ],
+  "memory_latency_ns": 100,
+  "inclusive": true,
+  "workload_defaults": {
+    "n": 10000,
+    "address_space_kb": 1024,
+    "seq_frac": 0.5,
+    "hot_frac": 0.3,
+    "write_ratio": 0.1,
+    "seed": 42
+  }
+}

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook version='2020.4' source-build='starter' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-history/>
+  <datasources>
+    <datasource name='results' version='18.1'>
+      <connection class='textscan' dbname='outputs/results.csv' />
+      <aliases enabled='yes'/>
+      <columns>
+        <column name='[amat_ns]' datatype='real'/>
+        <column name='[overall_hit_rate]' datatype='real'/>
+        <column name='[policy_L1]' datatype='string'/>
+        <column name='[policy_L2]' datatype='string'/>
+        <column name='[run_id]' datatype='string'/>
+      </columns>
+    </datasource>
+    <datasource name='events' version='18.1'>
+      <connection class='textscan' dbname='outputs/events.csv' />
+      <columns>
+        <column name='[access_id]' datatype='integer'/>
+        <column name='[total_latency_ns]' datatype='real'/>
+        <column name='[level_hit]' datatype='string'/>
+        <column name='[policy_L1]' datatype='string'/>
+        <column name='[policy_L2]' datatype='string'/>
+        <column name='[set_index_L1]' datatype='integer'/>
+      </columns>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Policy Comparison'>
+      <table>
+        <view>
+          <datasource ref='results'/>
+          <rows>
+            <field name='[policy_L1]' role='dimension'/>
+          </rows>
+          <marks>
+            <mark type='bar'/>
+            <encoding>
+              <field name='[amat_ns]' role='measure' aggregation='avg'/>
+              <field name='[policy_L2]' role='dimension' shelf='color'/>
+            </encoding>
+          </marks>
+        </view>
+      </table>
+    </worksheet>
+    <worksheet name='Latency Distribution'>
+      <table>
+        <view>
+          <datasource ref='events'/>
+          <rows>
+            <field name='[total_latency_ns]' role='measure' aggregation='avg'/>
+          </rows>
+          <marks>
+            <mark type='bar'/>
+            <encoding>
+              <field name='[policy_L1]' role='dimension' shelf='color'/>
+            </encoding>
+          </marks>
+        </view>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Overview'>
+      <zones>
+        <zone type='worksheet' name='Policy Comparison'/>
+        <zone type='worksheet' name='Latency Distribution'/>
+      </zones>
+    </dashboard>
+  </dashboards>
+</workbook>

@@ -1,0 +1,4 @@
+KPI deltas vs baseline: block_32_1756683804
+- block_32_1756683804: ΔAMAT=0.000 ns, ΔMPKI=0.0
+- block_64_1756683804: ΔAMAT=-3.868 ns, ΔMPKI=-39.0
+- block_128_1756683805: ΔAMAT=-7.451 ns, ΔMPKI=-74.4
