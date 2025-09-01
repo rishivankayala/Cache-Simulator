@@ -200,20 +200,20 @@ def generate_synthetic_trace(n: int, address_space_kb: int, block_size: int, seq
                 addr = (start + j * block_size) % space_bytes
                 op = "W" if rnd.random() < write_ratio else "R"
                 trace.append((access_id, op, addr))
-                access_id += 1;
+                access_id += 1
                 i += 1
         elif mode < seq_frac + hot_frac:
             base = rnd.randrange(0, max(1, space_bytes - hot_space), block_size)
             addr = base + rnd.randrange(0, max(1, hot_space // block_size)) * block_size
             op = "W" if rnd.random() < write_ratio else "R"
             trace.append((access_id, op, addr))
-            access_id += 1;
+            access_id += 1
             i += 1
         else:
             addr = rnd.randrange(0, max(1, space_bytes // block_size)) * block_size
             op = "W" if rnd.random() < write_ratio else "R"
             trace.append((access_id, op, addr))
-            access_id += 1;
+            access_id += 1
             i += 1
     return trace
 
