@@ -196,7 +196,7 @@ def generate_synthetic_trace(n: int, address_space_kb: int, block_size: int, seq
             length = rnd.randint(8, 64)  # burst in blocks
             for j in range(length):
                 if i >= n:
-                break
+                   break
                 addr = (start + j * block_size) % space_bytes
                 op = "W" if rnd.random() < write_ratio else "R"
                 trace.append((access_id, op, addr))
