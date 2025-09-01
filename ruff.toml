@@ -2,5 +2,5 @@ line-length = 100
 target-version = "py38"
 
 [lint]
-extend-select = ["E","F","I"]
+extend-select = ["E", "F", "I"]
 ignore = ["E501"]
