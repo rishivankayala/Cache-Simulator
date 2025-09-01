@@ -2,3 +2,6 @@
 # Project outputs
 outputs/*.csv
 outputs/*.txt
+
+# macOS
+.DS_Store
