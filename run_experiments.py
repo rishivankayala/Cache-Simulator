@@ -2,6 +2,7 @@
 import argparse
 import os
 import time
+
 from simulator import run_simulation
 
 def parse_args():

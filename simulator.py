@@ -2,9 +2,9 @@
 import csv
 import json
 import random
-from dataclasses import dataclass
-from typing import Dict, List, Tuple, Optional
 from collections import OrderedDict, defaultdict, deque
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Tuple
 
 # ---------------- Policies ----------------
 class Policy:
