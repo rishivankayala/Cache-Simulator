@@ -6,7 +6,9 @@ Examples:
   python run_sweeps.py assoc --l1_assoc "2,4,8,16"
   python run_sweeps.py blocks --block_size "32,64,128"
 """
-import argparse, os, time, csv, json
+import argparse
+import os
+import time
 from simulator import run_simulation
 
 def parse_args():

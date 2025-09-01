@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-import argparse, os, json, time
-from simulator import run_simulation, Policy
+import argparse
+import os
+import time
+from simulator import run_simulation
 
 def parse_args():
     p = argparse.ArgumentParser(description="Cache Simulator Experiment Runner")
